@@ -1,11 +1,11 @@
 # System Zarządzania Sklepem - Projekt Bazy Danych
 
-## 📌 Opis projektu
+## Opis projektu
 Aplikacja desktopowa połączona z relacyjną bazą danych, symulująca działanie sklepu stacjonarnego/internetowego. System umożliwia kompleksowe zarządzanie asortymentem, obsługę zamówień klientów, logistykę magazynową oraz ewidencję pracowników z podziałem na role (Kasjer, Magazynier). 
 
 Projekt został zrealizowany w ramach zaliczenia przedmiotu Bazy Danych. Składa się z części bazodanowej (skrypty SQL) oraz aplikacji klienckiej (GUI w Javie).
 
-## 🛠 Technologie
+## Technologie
 * **Baza danych:** IBM Db2 (uruchamiana w środowisku Docker)
 * **Język aplikacji:** Java 21
 * **Interfejs graficzny:** Java Swing
@@ -13,7 +13,7 @@ Projekt został zrealizowany w ramach zaliczenia przedmiotu Bazy Danych. Składa
 * **Zarządzanie zależnościami:** Maven
 * **Raportowanie:** JasperReports
 
-## 🗄️ Struktura Bazy Danych (Logika Biznesowa)
+## Struktura Bazy Danych (Logika Biznesowa)
 System opiera się na znormalizowanym modelu relacyjnym, w skład którego wchodzą następujące moduły:
 * **Sprzedaż i Klienci:** Tabele `Klient`, `Zamowienie`, `PozycjaZamowienia`, `Platnosc`.
 * **Katalog Produktów:** Tabele `Produkt`, `Kategoria`. Zaimplementowano tu m.in. związek unarny pozwalający na definiowanie zamienników dla produktów.
@@ -24,7 +24,7 @@ W bazie wykorzystano zaawansowane obiekty programistyczne, takie jak **Procedury
 
 ---
 
-## 🚀 Instrukcja uruchomienia (Dla Prowadzącego)
+## Instrukcja uruchomienia (Dla Prowadzącego)
 
 Aby poprawnie uruchomić projekt i przetestować jego działanie, postępuj zgodnie z poniższymi krokami.
 
@@ -47,7 +47,7 @@ Aplikacja wymaga działającego serwera IBM Db2 nasłuchującego na porcie `5000
 4. Sprawdź, czy stała `PASSWORD` odpowiada hasłu skonfigurowanemu w Twoim środowisku Docker (zabezpieczenie połączenia bazuje na `authentication=SERVER`).
 5. Uruchom klasę główną: **`SklepGUI.java`**.
 
-## 📁 Zawartość paczki zaliczeniowej
+## Zawartość paczki zaliczeniowej
 * `/src` - kod źródłowy aplikacji klienckiej (Java).
 * `skrypt_bazy.sql` - kompletny zrzut struktury i danych bazy.
 * `Dokumentacja_Projektu.pdf` - szczegółowy opis schematów E-R, relacji, diagramów UML oraz zestawienie zapytań SQL.
