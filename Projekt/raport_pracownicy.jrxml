@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="RaportPracownicy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <parameter name="MinDataZatrudnienia" class="java.sql.Date"/>
+    <parameter name="SzukaneStanowisko" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[SELECT * FROM Pracownik WHERE dataZatrudnienia >= $P{MinDataZatrudnienia} AND typPracownika LIKE $P{SzukaneStanowisko}]]>
+    </queryString>
+    <field name="IMIE" class="java.lang.String"/>
+    <field name="NAZWISKO" class="java.lang.String"/>
+    <field name="TYPPRACOWNIKA" class="java.lang.String"/>
+    <field name="DATAZATRUDNIENIA" class="java.lang.String"/>
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Raport Pracowników]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="140" height="30"/><text><![CDATA[Imię]]></text></staticText>
+            <staticText><reportElement x="140" y="0" width="140" height="30"/><text><![CDATA[Nazwisko]]></text></staticText>
+            <staticText><reportElement x="280" y="0" width="140" height="30"/><text><![CDATA[Stanowisko]]></text></staticText>
+            <staticText><reportElement x="420" y="0" width="135" height="30"/><text><![CDATA[Data Zatrudnienia]]></text></staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="30">
+            <textField><reportElement x="0" y="0" width="140" height="30"/><textFieldExpression><![CDATA[$F{IMIE}]]></textFieldExpression></textField>
+            <textField><reportElement x="140" y="0" width="140" height="30"/><textFieldExpression><![CDATA[$F{NAZWISKO}]]></textFieldExpression></textField>
+            <textField><reportElement x="280" y="0" width="140" height="30"/><textFieldExpression><![CDATA[$F{TYPPRACOWNIKA}]]></textFieldExpression></textField>
+            <textField><reportElement x="420" y="0" width="135" height="30"/><textFieldExpression><![CDATA[$F{DATAZATRUDNIENIA}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>

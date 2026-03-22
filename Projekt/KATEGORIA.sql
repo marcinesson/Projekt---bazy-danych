@@ -1,0 +1,15 @@
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Pieczywo', 'Świeże chleby, bułki i wypieki');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Nabiał', 'Mleko, sery, jogurty, jaja');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Owoce i Warzywa', 'Świeże produkty roślinne');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Mięso i Wędliny', 'Drób, wieprzowina, wołowina');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Napoje', 'Woda, soki, napoje gazowane');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Słodycze', 'Czekolady, batony, ciastka');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Mrożonki', 'Lody, pizze, mrożone warzywa');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Chemia', 'Środki czystości i higieny');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Sypkie', 'Mąki, kasze, ryże, makarony');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Przekąski', 'Chipsy, orzeszki, paluszki');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Alkohol', 'Piwo, wino, wódka');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Dla zwierząt', 'Karma dla psów i kotów');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Dania gotowe', 'Słoiki, zupki, sosy');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Kawa i Herbata', 'Kawy ziarniste i herbaty');
+INSERT INTO DB2INST1.KATEGORIA (NAZWA, OPIS) VALUES ('Przyprawy', 'Sól, pieprz, zioła');

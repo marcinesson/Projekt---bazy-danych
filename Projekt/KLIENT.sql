@@ -1,0 +1,15 @@
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Jan', 'Kowalski', 'jan.kowalski@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Anna', 'Nowak', 'anna.nowak@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Piotr', 'Wisniewski', 'piotr.w@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Maria', 'Wojcik', 'maria.w@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Krzysztof', 'Kowalczyk', 'krzysztof.k@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Agnieszka', 'Kaminska', 'aga.kam@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Tomasz', 'Lewandowski', 'tomek.lew@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Ewa', 'Zielinska', 'ewa.ziel@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Pawel', 'Szymanski', 'pawel.szym@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Magdalena', 'Wozniak', 'magda.woz@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Marcin', 'Dabrowski', 'marcin.dab@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Karolina', 'Kozlowska', 'karolina.koz@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Marek', 'Jankowski', 'marek.jan@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Justyna', 'Mazur', 'justyna.maz@email.com');
+INSERT INTO DB2INST1.KLIENT (IMIE, NAZWISKO, EMAIL) VALUES ('Wojciech', 'Kwiatkowski', 'wojtek.kwiat@email.com');

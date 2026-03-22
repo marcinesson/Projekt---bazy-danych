@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="RaportWykres" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <parameter name="MinIlosc" class="java.lang.Integer"/>
+    <parameter name="MinCena" class="java.math.BigDecimal"/>
+    <queryString>
+        <![CDATA[SELECT nazwa, cena FROM Produkt WHERE cena >= $P{MinCena} FETCH FIRST $P{MinIlosc} ROWS ONLY]]>
+    </queryString>
+    <field name="NAZWA" class="java.lang.String"/>
+    <field name="CENA" class="java.math.BigDecimal"/>
+    <title>
+        <band height="50">
+            <staticText><reportElement x="0" y="0" width="555" height="50"/><textElement textAlignment="Center"><font size="20"/></textElement><text><![CDATA[Analiza Cen Produktów (Wykres)]]></text></staticText>
+        </band>
+    </title>
+    <summary>
+        <band height="300">
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="0" y="0" width="555" height="300"/>
+                    <chartTitle><titleExpression><![CDATA["Ceny produktów"]]></titleExpression></chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["Cena"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{NAZWA}]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{CENA}]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot>
+                    <plot/>
+                    <itemLabel/>
+                    <categoryAxisFormat><axisFormat/></categoryAxisFormat>
+                    <valueAxisFormat><axisFormat/></valueAxisFormat>
+                </barPlot>
+            </barChart>
+        </band>
+    </summary>
+</jasperReport>

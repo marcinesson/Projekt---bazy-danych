@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="RaportSprzedazy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <parameter name="DataOd" class="java.sql.Date"/>
+    <parameter name="DataDo" class="java.sql.Date"/>
+    <queryString>
+        <![CDATA[SELECT k.nazwa as KATEGORIA, p.nazwa as PRODUKT, pz.ilosc, pz.cena_jednostkowa, (pz.ilosc * pz.cena_jednostkowa) as WARTOSC
+                 FROM PozycjaZamowienia pz
+                 JOIN Produkt p ON pz.idProduktu = p.idProduktu
+                 JOIN Kategoria k ON p.idKategorii = k.idKategorii
+                 JOIN Zamowienie z ON pz.idZamowienia = z.idZamowienia
+                 WHERE z.dataZamowienia >= $P{DataOd} AND z.dataZamowienia <= $P{DataDo}
+                 ORDER BY k.nazwa]]>
+    </queryString>
+    <field name="KATEGORIA" class="java.lang.String"/>
+    <field name="PRODUKT" class="java.lang.String"/>
+    <field name="ILOSC" class="java.lang.Integer"/>
+    <field name="WARTOSC" class="java.math.BigDecimal"/>
+    <group name="GrupaKategoria">
+        <groupExpression><![CDATA[$F{KATEGORIA}]]></groupExpression>
+        <groupHeader>
+            <band height="30">
+                <textField>
+                    <reportElement x="0" y="0" width="555" height="30" backcolor="#E0E0E0" mode="Opaque"/>
+                    <textElement verticalAlignment="Middle"><font size="14" isBold="true"/></textElement>
+                    <textFieldExpression><![CDATA["Kategoria: " + $F{KATEGORIA}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+    </group>
+    <title>
+        <band height="50">
+            <staticText><reportElement x="0" y="0" width="555" height="50"/><textElement textAlignment="Center"><font size="20"/></textElement><text><![CDATA[Sprzedaż wg Kategorii (Grupowanie)]]></text></staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="20">
+            <textField><reportElement x="20" y="0" width="200" height="20"/><textFieldExpression><![CDATA[$F{PRODUKT}]]></textFieldExpression></textField>
+            <textField><reportElement x="220" y="0" width="100" height="20"/><textFieldExpression><![CDATA["Ilość: " + $F{ILOSC}]]></textFieldExpression></textField>
+            <textField><reportElement x="320" y="0" width="100" height="20"/><textFieldExpression><![CDATA["Suma: " + $F{WARTOSC} + " PLN"]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>

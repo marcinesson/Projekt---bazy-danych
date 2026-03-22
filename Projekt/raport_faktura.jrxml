@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Faktura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <parameter name="IdZamowienia" class="java.lang.Integer"/>
+    <parameter name="Tytul" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[SELECT z.idZamowienia, z.dataZamowienia, k.imie, k.nazwisko, p.nazwa, pz.ilosc, pz.cena_jednostkowa
+                 FROM PozycjaZamowienia pz
+                 JOIN Zamowienie z ON pz.idZamowienia = z.idZamowienia
+                 JOIN Klient k ON z.idKlienta = k.idKlienta
+                 JOIN Produkt p ON pz.idProduktu = p.idProduktu
+                 WHERE z.idZamowienia = $P{IdZamowienia}]]>
+    </queryString>
+    <field name="IDZAMOWIENIA" class="java.lang.Integer"/>
+    <field name="DATAZAMOWIENIA" class="java.sql.Date"/>
+    <field name="IMIE" class="java.lang.String"/>
+    <field name="NAZWISKO" class="java.lang.String"/>
+    <field name="NAZWA" class="java.lang.String"/>
+    <field name="ILOSC" class="java.lang.Integer"/>
+    <field name="CENA_JEDNOSTKOWA" class="java.math.BigDecimal"/>
+    <title>
+        <band height="80">
+            <textField><reportElement x="0" y="0" width="555" height="40"/><textElement textAlignment="Center"><font size="22" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{Tytul}]]></textFieldExpression></textField>
+            <textField><reportElement x="0" y="40" width="555" height="20"/><textElement textAlignment="Left"/><textFieldExpression><![CDATA["Klient: " + $F{IMIE} + " " + $F{NAZWISKO}]]></textFieldExpression></textField>
+            <textField><reportElement x="0" y="60" width="555" height="20"/><textElement textAlignment="Left"/><textFieldExpression><![CDATA["Data: " + $F{DATAZAMOWIENIA}]]></textFieldExpression></textField>
+        </band>
+    </title>
+    <detail>
+        <band height="40">
+            <rectangle><reportElement x="0" y="0" width="555" height="40" backcolor="#F0F0F0"/><graphicElement><pen lineWidth="0.5"/></graphicElement></rectangle>
+            <textField><reportElement x="10" y="10" width="200" height="20"/><textElement><font size="12" isBold="true"/></textElement><textFieldExpression><![CDATA[$F{NAZWA}]]></textFieldExpression></textField>
+            <textField><reportElement x="220" y="10" width="100" height="20"/><textFieldExpression><![CDATA["Ilość: " + $F{ILOSC}]]></textFieldExpression></textField>
+            <textField><reportElement x="350" y="10" width="100" height="20"/><textFieldExpression><![CDATA["Cena: " + $F{CENA_JEDNOSTKOWA}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>
