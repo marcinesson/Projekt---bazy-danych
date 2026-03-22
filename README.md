@@ -22,7 +22,6 @@ System opiera się na znormalizowanym modelu relacyjnym, w skład którego wchod
 
 W bazie wykorzystano zaawansowane obiekty programistyczne, takie jak **Procedury składowane** (np. do automatycznej przeceny kategorii) oraz **Wyzwalacze (Triggery)** kontrolujące spójność biznesową.
 
----
 
 ## Instrukcja uruchomienia (Dla Prowadzącego)
 
